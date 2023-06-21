@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { FC } from 'react'
 
-export const SITE_TITLE = 'ITV WebCinema'
+export const SITE_TITLE = 'Стриминг Сервис'
 
 interface EmptyLayoutProps {
   title?: string

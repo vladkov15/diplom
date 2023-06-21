@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react'
 
 import CabinetNavigation from '@/components/CabinetNavigation'
 
-export const SITE_TITLE = 'ITV WebCinema'
+export const SITE_TITLE = 'Стриминг Сервис'
 
 interface CabinetLayoutProps {
   pageTitle?: string

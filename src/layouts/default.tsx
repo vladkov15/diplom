@@ -6,7 +6,7 @@ import MainFooter from '@/components/MainFooter'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import MainAlertNotificationList from '@/modules/notification/components/MainAlertNotificationList'
 
-export const SITE_TITLE = 'ITV WebCinema'
+export const SITE_TITLE = 'Стриминг Сервис'
 
 interface DefaultLayoutProps {
   pageTitle?: string
