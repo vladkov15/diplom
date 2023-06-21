@@ -1,0 +1,64 @@
+// scss-docs-start button-variables
+$button-height: 50px !default;
+$button-padding-y: 10px !default;
+$button-padding-x: 30px !default;
+$button-font-family: inherit !default;
+$button-font-size: 1rem !default;
+$button-line-height: 1 !default;
+$button-white-space: null !default;
+
+$button-height-sm: 40px !default;
+$button-padding-y-sm: 10px !default;
+$button-padding-x-sm: 20px !default;
+$button-font-size-sm: 1rem !default;
+
+$button-border-width: 0 !default;
+
+$button-font-weight: $font-weight-normal !default;
+$button-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$button-focus-width: 0 !default;
+$button-focus-box-shadow: 0px 0px 14px $accent !default;
+$button-disabled-opacity: 0.2 !default;
+$button-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
+
+$button-link-color: var(--link-color) !default;
+$button-link-decoration: var(--link-decoration) !default;
+$button-link-hover-color: var(--link-hover-color) !default;
+$button-link-hover-decoration: var(--link-hover-decoration) !default;
+$button-link-disabled-color: inherit !default;
+
+$button-icon-size: 50px !default;
+$button-icon-padding-y: 0 !default;
+$button-icon-padding-x: 0 !default;
+$button-icon-font-size: 25px !default;
+
+$button-icon-size-sm: 40px !default;
+$button-icon-font-size-sm: 22px !default;
+
+$button-border-radius: 10px !default;
+$button-border-radius-sm: 10px !default;
+
+$button-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+
+$button-hover-bg-shade-amount: 15% !default;
+$button-hover-bg-tint-amount: 15% !default;
+$button-hover-border-shade-amount: 20% !default;
+$button-hover-border-tint-amount: 10% !default;
+$button-active-bg-shade-amount: 20% !default;
+$button-active-bg-tint-amount: 20% !default;
+$button-active-border-shade-amount: 25% !default;
+$button-active-border-tint-amount: 10% !default;
+// scss-docs-end button-variables
+
+// scss-docs-start button-close-variables
+$button-close-size: 20px;
+$button-close-padding-x: 5px;
+$button-close-padding-y: $button-close-padding-x;
+$button-close-color: #000;
+$button-close-bg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
+$button-close-opacity: 0.5;
+$button-close-hover-opacity: 0.75;
+$button-close-disabled-opacity: 0.25;
+$button-close-white-filter: invert(1) grayscale(100%) brightness(200%);
+// scss-docs-end button-close-variables

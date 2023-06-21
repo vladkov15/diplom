@@ -1,0 +1,194 @@
+@import './variables';
+
+.form-control {
+  display: flex;
+  align-items: center;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    padding: $input-padding-y $input-padding-x;
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    appearance: none;
+
+    @include border-radius($input-border-radius, 0);
+
+    @include box-shadow($input-box-shadow);
+    @include transition($input-transition);
+
+    &:hover,
+    &:focus-within {
+      color: $input-focus-color;
+      background-color: $input-focus-bg;
+      border-color: $input-focus-border-color;
+      outline: 0;
+
+      @if $enable-shadows {
+        @include box-shadow($input-box-shadow, $input-focus-box-shadow);
+      } @else {
+        box-shadow: $input-focus-box-shadow;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  &-element {
+    width: 100%;
+    min-height: $input-height;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: $input-color;
+    font-weight: 500;
+    text-transform: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $input-placeholder-color;
+      opacity: 1;
+    }
+
+    &:disabled {
+      color: $input-disabled-color;
+      background-color: $input-disabled-bg;
+      border-color: $input-disabled-border-color;
+      opacity: 1;
+    }
+  }
+
+  &--label {
+    &--active {
+      .form-control-label {
+        transform: translateY(-14px) scale(0.8);
+        color: var(--accent);
+        font-weight: 500;
+      }
+    }
+  }
+
+  &--dirty {
+    .form-control-element {
+      color: $input-dirty-color;
+    }
+  }
+
+  &--focus,
+  &--touch {
+    .form-control-label {
+      transition: 0.3s all cubic-bezier(0.25, 0.8, 0.5, 1);
+    }
+  }
+
+  &--sm {
+    .form-control-container {
+      padding: $input-padding-y-sm $input-padding-x-sm;
+      @include border-radius($input-border-radius-sm);
+    }
+
+    .form-control-element {
+      min-height: $input-height-sm;
+    }
+  }
+
+  &--lg {
+    .form-control-container {
+      padding: $input-padding-y-lg $input-padding-x-lg;
+      @include border-radius($input-border-radius-lg);
+    }
+
+    .form-control-element {
+      min-height: $input-height-lg;
+    }
+  }
+}
+
+.form-control-label {
+  position: absolute;
+  top: calc(50% - 7px);
+  transform-origin: top left;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: text;
+  color: $input-label-color;
+}
+
+.form-control-prepand-inner {
+  display: inline-flex;
+  padding-right: 5px;
+  line-height: 1;
+}
+
+.form-control-append-inner {
+  display: inline-flex;
+  padding-left: 5px;
+  line-height: 1;
+}
+
+.form-control-prepand-outer {
+  display: inline-flex;
+  margin-right: 10px;
+  line-height: 1;
+}
+
+.form-control-append-outer {
+  display: inline-flex;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.form-control--plaintext {
+  .form-control-container {
+    display: block;
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    margin-bottom: 0;
+    color: $input-plaintext-color;
+    background-color: transparent;
+    border: solid transparent;
+    border-width: $input-border-width 0;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.form-control--sm,
+  &.form-control--lg {
+    .form-control-container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.form-control--textarea {
+  .form-control-element {
+    min-height: $input-height;
+  }
+
+  &.form-control--sm {
+    .form-control-element {
+      min-height: $input-height-sm;
+    }
+  }
+
+  &.form-control--lg {
+    .form-control-element {
+      min-height: $input-height-lg;
+    }
+  }
+}

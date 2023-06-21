@@ -1,0 +1,43 @@
+@import './variables';
+
+@mixin button-close-white() {
+  filter: var(--button-close-white-filter);
+}
+
+.button-close {
+  --button-close-size: #{$button-close-size};
+  --button-close-color: #{$button-close-color};
+  --button-close-bg: #{$button-close-bg};
+  --button-close-opacity: #{$button-close-opacity};
+  --button-close-hover-opacity: #{$button-close-hover-opacity};
+  --button-close-disabled-opacity: #{$button-close-disabled-opacity};
+  --button-close-white-filter: #{$button-close-white-filter};
+
+  box-sizing: content-box;
+  width: var(--button-close-size);
+  height: var(--button-close-size);
+  padding: $button-close-padding-y $button-close-padding-x;
+  color: var(--button-close-color);
+  background: transparent var(--button-close-bg) center / var(--button-close-size) auto no-repeat;
+  border: 0;
+  opacity: var(--button-close-opacity);
+  cursor: pointer;
+
+  &--white {
+    @include button-close-white();
+  }
+
+  &:hover {
+    color: var(--button-close-color);
+    text-decoration: none;
+    opacity: var(--button-close-hover-opacity);
+  }
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    user-select: none;
+    opacity: var(--button-close-disabled-opacity);
+    cursor: not-allowed;
+  }
+}

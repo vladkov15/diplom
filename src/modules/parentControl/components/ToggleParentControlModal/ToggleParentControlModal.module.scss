@@ -1,0 +1,16 @@
+.ToggleParentControlModal {
+  
+  &__Header {
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 30px 50px;
+    text-transform: lowercase;
+  }
+
+  &__Body {
+    width: 100%;
+    padding: 0 50px;
+    color: #fff;
+  }
+}

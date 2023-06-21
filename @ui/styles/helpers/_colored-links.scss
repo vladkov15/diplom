@@ -1,0 +1,25 @@
+@each $color, $value in $theme-colors {
+  .link-#{$color} {
+    color: rgba(var(--#{$color}-rgb, var(--link-opacity, 1)));
+    text-decoration-color: RGBA(
+      var(--#{$color}-rgb),
+      var(--link-underline-opacity, 1)
+    );
+
+    @if $link-shade-percentage != 0 {
+      &:hover,
+      &:focus {
+        $hover-color: if(
+          color-contrast($value) == $color-contrast-light,
+          shade-color($value, $link-shade-percentage),
+          tint-color($value, $link-shade-percentage)
+        );
+        color: rgba(#{to-rgb($hover-color)}, var(--link-opacity, 1));
+        text-decoration-color: rgba(
+          to-rgb($hover-color),
+          var(--link-underline-opacity, 1)
+        );
+      }
+    }
+  }
+}

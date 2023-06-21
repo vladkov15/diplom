@@ -1,0 +1,16 @@
+.form-dropdown-select {
+  &--toggle {
+    padding-right: 40px;
+  }
+}
+
+.form-dropdown-select-actions {
+  margin-right: -10px;
+
+  &__caret {
+    --button-transition: color 0.15s ease-in-out;
+
+    transition: 0.25s all ease;
+    color: #000;
+  }
+}

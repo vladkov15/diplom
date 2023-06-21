@@ -1,0 +1,62 @@
+@mixin caret-down($width: $caret-width) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M24 30.15q-.3 0-.55-.1-.25-.1-.5-.35l-9.9-9.9q-.4-.4-.375-1.075.025-.675.425-1.075.5-.5 1.075-.425.575.075 1.025.475l8.8 8.8 8.8-8.8q.4-.4 1.075-.45.675-.05 1.075.45.5.4.425 1.05-.075.65-.475 1.1l-9.85 9.85q-.25.25-.5.35-.25.1-.55.1Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-position: center;
+}
+
+@mixin caret-up($width: $caret-width) {
+  border-top: 0;
+  border-right: $width solid transparent;
+  border-bottom: $width solid;
+  border-left: $width solid transparent;
+}
+
+@mixin caret-end($width: $caret-width) {
+  border-top: $width solid transparent;
+  border-right: 0;
+  border-bottom: $width solid transparent;
+  border-left: $width solid;
+}
+
+@mixin caret-start($width: $caret-width) {
+  border-top: $width solid transparent;
+  border-right: $width solid;
+  border-bottom: $width solid transparent;
+}
+
+@mixin caret($direction: down, $width: $caret-width, $spacing: $caret-spacing) {
+  @if $enable-caret {
+    &::after {
+      display: block;
+      width: $width;
+      height: $width;
+      margin-left: $spacing;
+      content: '';
+      @if $direction == down {
+        @include caret-down($width);
+      } @else if $direction == up {
+        @include caret-up($width);
+      } @else if $direction == end {
+        @include caret-end($width);
+      }
+    }
+
+    @if $direction == start {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        width: $width;
+        height: $width;
+        margin-right: $spacing;
+        content: '';
+        @include caret-start($width);
+      }
+    }
+
+    &:empty::after {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+$tooltip-font-size: $font-size-base !default;
+$tooltip-max-width: 200px !default;
+$tooltip-color: var(--black) !default;
+$tooltip-bg: var(--white) !default;
+$tooltip-border-radius: 5px !default;
+$tooltip-opacity: 0.9 !default;
+$tooltip-padding-y: $spacer * 0.25 !default;
+$tooltip-padding-x: $spacer * 0.5 !default;
+$tooltip-margin: null !default;
+
+$tooltip-arrow-width: 0.8rem !default;
+$tooltip-arrow-height: 0.4rem !default;
+
+$tooltip-arrow-color: null !default;

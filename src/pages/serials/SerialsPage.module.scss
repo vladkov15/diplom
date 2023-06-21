@@ -1,0 +1,27 @@
+.SerialsPage {
+  margin: 35px auto;
+
+  &__SerialGenreSlider {
+    margin-bottom: 70px;
+  }
+
+  &__PromoSerialSlider {
+    margin-bottom: 70px;
+  }
+
+  &__UnfinishedSerialSlider {
+    margin-bottom: 70px;
+  }
+
+  &__FavoritesSerialSlider {
+    margin-bottom: 70px;
+  }
+
+  &__SerialSlider {
+    margin-bottom: 70px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.SubscribeForm {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 360px;
+  width: 100%;
+
+  &__Title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__Group {
+    margin-bottom: 20px;
+  }
+
+  &__GroupSubmit {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}

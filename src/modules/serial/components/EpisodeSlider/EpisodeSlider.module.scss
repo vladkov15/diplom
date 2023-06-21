@@ -1,0 +1,24 @@
+.EpisodeSlider {
+  margin: 0 -20px;
+  padding: 0 20px;
+  padding-top: 20px;
+
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    top: calc(50% - 5px);
+  }
+
+  :global(.swiper-button-prev) {
+    left: 30px;
+  }
+
+  :global(.swiper-button-next) {
+    right: 30px;
+  }
+}
+
+.EpisodeSkeletonSlider {
+  margin: 0 -20px;
+  padding: 0 20px;
+  padding-top: 20px;
+}

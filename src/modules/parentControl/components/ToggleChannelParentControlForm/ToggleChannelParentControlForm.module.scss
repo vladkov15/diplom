@@ -1,0 +1,9 @@
+.ToggleChannelParentControlForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 30px;
+  background-color: rgba(var(--primary-rgb), 0.8);
+  border-radius: 10px;
+}

@@ -1,0 +1,152 @@
+@import './variables';
+
+.list {
+  // scss-docs-start list-css-vars
+  --list-color: #{$list-color};
+  --list-bg: #{$list-bg};
+  --list-border-color: #{$list-border-color};
+  --list-border-width: #{$list-border-width};
+  --list-border-radius: #{$list-border-radius};
+  --list-item-padding-x: #{$list-item-padding-x};
+  --list-item-padding-y: #{$list-item-padding-y};
+  --list-action-color: #{$list-action-color};
+  --list-action-hover-color: #{$list-action-hover-color};
+  --list-action-hover-bg: #{$list-hover-bg};
+  --list-action-active-color: #{$list-action-active-color};
+  --list-action-active-bg: #{$list-action-active-bg};
+  --list-disabled-color: #{$list-disabled-color};
+  --list-disabled-bg: #{$list-disabled-bg};
+  --list-active-color: #{$list-active-color};
+  --list-active-bg: #{$list-active-bg};
+  --list-active-border-color: #{$list-active-border-color};
+  // scss-docs-end list-css-vars
+
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  @include border-radius(var(--list-border-radius));
+
+  &--numbered {
+    list-style-type: none;
+    counter-reset: section;
+
+    > .list-item::before {
+      content: counters(section, '.') '. ';
+      counter-increment: section;
+    }
+  }
+
+  &--flush {
+    @include border-radius(0);
+
+    > .list-item {
+      border-width: 0 0 var(--list-border-width);
+
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+.list-item {
+  position: relative;
+  display: block;
+  padding: var(--list-item-padding-y) var(--list-item-padding-x);
+  color: var(--list-color);
+  text-decoration: if($link-decoration == none, null, none);
+  background-color: var(--list-bg);
+  border: var(--list-border-width) solid var(--list-border-color);
+  line-height: 1;
+
+  &:first-child {
+    @include border-top-radius(inherit);
+  }
+
+  &:last-child {
+    @include border-bottom-radius(inherit);
+  }
+
+  &--disabled,
+  &:disabled {
+    color: var(--list-disabled-color);
+    pointer-events: none;
+    background-color: var(--list-disabled-bg);
+  }
+
+  &--action {
+    width: 100%;
+    color: var(--list-action-color);
+    text-align: inherit;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      z-index: 1;
+      color: var(--list-action-hover-color);
+      text-decoration: none;
+      background-color: var(--list-action-hover-bg);
+    }
+
+    &.list-item--active,
+    &:active {
+      color: var(--list-action-active-color);
+      background-color: var(--list-action-active-bg);
+    }
+  }
+
+  &--active {
+    z-index: 2;
+    color: var(--list-active-color);
+    background-color: var(--list-active-bg);
+    border-color: var(--list-active-border-color);
+  }
+
+  & + .list-item {
+    border-top-width: 0;
+
+    &--active {
+      margin-top: calc(-1 * var(--list-border-width));
+      border-top-width: var(--list-border-width);
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .list {
+      &--horizontal--#{$infix} {
+        flex-direction: row;
+
+        > .list-item {
+          &:first-child:not(:last-child) {
+            @include border-bottom-start-radius(var(--list-border-radius));
+            @include border-top-end-radius(0);
+          }
+
+          &:last-child:not(:first-child) {
+            @include border-top-end-radius(var(--list-border-radius));
+            @include border-bottom-start-radius(0);
+          }
+
+          &--active {
+            margin-top: 0;
+          }
+
+          + .list-item {
+            border-top-width: var(--list-border-width);
+            border-left-width: 0;
+
+            &--active {
+              margin-left: calc(-1 * var(--list-border-width));
+              border-left-width: var(--list-border-width);
+            }
+          }
+        }
+      }
+    }
+  }
+}

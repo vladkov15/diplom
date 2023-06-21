@@ -1,0 +1,106 @@
+$control-panel-background-color: rgba(0, 0, 0, 0.6);
+
+.Overlay {
+  --control-panel-background-color: #{$control-panel-background-color};
+
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  &__Header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.25s all ease-in-out;
+    transform: translateY(-100%);
+    background-color: var(--control-panel-background-color);
+  }
+
+  &__Body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 110px;
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  &__LeftSlot {
+    background-color: var(--control-panel-background-color);
+
+    &__Empty {
+      background-color: transparent;
+    }
+  }
+
+  &__RightSlot {
+    background-color: var(--control-panel-background-color);
+
+    &__Empty {
+      background-color: transparent;
+    }
+  }
+
+  &__Footer {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--control-panel-background-color);
+    transition: 0.25s all ease-in-out;
+    transform: translateY(100%);
+  }
+
+  &__Control {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__PlayPauseButton {
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--control-panel-background-color);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s all ease-in-out;
+
+    &:hover {
+      --button-hover-bg: var(--control-panel-background-color);
+    }
+  }
+
+  &__Active {
+    .Overlay__Header {
+      transform: translateY(0);
+    }
+
+    .Overlay__Footer {
+      transform: translateY(0);
+    }
+
+    .Overlay__PlayPauseButton {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__Paused {
+    .Overlay__PlayPauseButton {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

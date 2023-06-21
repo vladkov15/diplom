@@ -1,0 +1,26 @@
+// List group
+
+// scss-docs-start list-variables
+$list-color: $black !default;
+$list-bg: $white !default;
+$list-border-color: var(--border-color) !default;
+$list-border-width: var(--border-width) !default;
+$list-border-radius: var(--border-radius) !default;
+
+$list-item-padding-y: $spacer * 0.5 !default;
+$list-item-padding-x: $spacer !default;
+
+$list-hover-bg: $gray-100 !default;
+$list-active-color: $white !default;
+$list-active-bg: $accent !default;
+$list-active-border-color: $list-active-bg !default;
+
+$list-disabled-color: $black !default;
+$list-disabled-bg: $list-bg !default;
+
+$list-action-color: $black !default;
+$list-action-hover-color: $gray-700 !default;
+
+$list-action-active-color: $white !default;
+$list-action-active-bg: $accent !default;
+// scss-docs-end list-variables

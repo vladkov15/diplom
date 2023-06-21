@@ -1,0 +1,75 @@
+.MainNavigation {
+  flex-grow: 1;
+
+  &__MainList {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 50px;
+
+    li {
+      margin-right: 30px;
+      text-transform: uppercase;
+      line-height: 1;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a {
+        position: relative;
+        font-weight: 500;
+        transition: 0.25s color ease;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+
+      :global a.active {
+        color: #03DAC6;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color:#03DAC6;
+        }
+      }
+    }
+  }
+
+  &__MoreList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 20px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-weight: 500;
+        transition: 0.25s color ease;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
+  }
+}
+
+.MoreDropdownTrigger {
+  --button-icon-font-size: 28px;
+
+  margin-left: -15px;
+}

@@ -1,0 +1,30 @@
+.accordion {
+}
+
+.accordion-item {
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion-header {
+  margin: 0;
+  padding: 40px 0;
+}
+
+.accordion-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0;
+}
+
+.accordion-collapse {
+}
+
+.accordion-body {
+  color: #cbcbcb;
+  opacity: 0.8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}

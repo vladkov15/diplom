@@ -1,0 +1,70 @@
+.Slider {
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    width: var(--swiper-button-size);
+    height: var(--swiper-button-size);
+    background: rgba(146, 144, 144, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s all ease;
+
+    &:hover {
+      background-color: var(--accent);
+      box-shadow: 0px 0px 14px var(--accent);
+    }
+
+    &:after {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  :global(.swiper-button-prev) {
+    left: calc(-1 * var(--swiper-button-size) / 2);
+
+    &:after {
+      margin-left: -3px;
+    }
+  }
+
+  :global(.swiper-button-next) {
+    right: calc(-1 * var(--swiper-button-size) / 2);
+
+    &:after {
+      margin-right: -3px;
+    }
+  }
+
+  :global(.swiper-button-disabled) {
+    display: none;
+  }
+}
+
+.EmptySkeletonSlider {
+  position: relative;
+  background-color: $secondary;
+  border-radius: $border-radius;
+
+  &__Body {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 992px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: $line-height-base;
+  }
+}

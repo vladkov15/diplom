@@ -1,0 +1,83 @@
+.ContactsPage {
+  display: grid;
+  grid-template-columns: auto 670px;
+  gap: 60px;
+
+  &__InfoTitle {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  &__InfoDescription {
+    color: #cbcbcb;
+    font-size: 12px;
+  }
+
+  &__InfoFooter {
+    p {
+      font-size: 15.5px;
+      margin-top: 30px;
+      line-height: 20px;
+    }
+    small {
+      color: #cbcbcb;
+      font-size: 12px;
+      margin-bottom: 5px;
+      margin-top: 30px;
+    }
+  }
+
+  &__MapContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &__MapLoader {
+    position: absolute;
+  }
+}
+
+.ContactsInfo {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__Title {
+    color: #cbcbcb;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  &__Content {
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 14px;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      transition: 0.25s color ease;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+}

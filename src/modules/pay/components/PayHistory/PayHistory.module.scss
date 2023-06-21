@@ -1,0 +1,35 @@
+.PayHistory {
+  &__Title {
+    margin-top: 0;
+    font-weight: 500;
+  }
+}
+
+.PayHistoryTable {
+  width: 100%;
+
+  td {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 5px;
+  }
+
+  &__Date {
+    width: 20%;
+  }
+
+  &__Name {
+    width: 20%;
+  }
+
+  &__Time {
+    width: 25%;
+  }
+
+  &__Image {
+    width: 25%;
+  }
+
+  &__Price {
+    text-align: right;
+  }
+}

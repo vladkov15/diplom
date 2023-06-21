@@ -1,0 +1,74 @@
+@import './variables';
+
+.alert {
+  --alert-bg: transparent;
+  --alert-padding-x: #{$alert-padding-x};
+  --alert-padding-y: #{$alert-padding-y};
+  --alert-color: inherit;
+  --alert-border-radius: #{$alert-border-radius};
+  --alert-link-color: inherit;
+
+  position: relative;
+  padding: var(--alert-padding-y) var(--alert-padding-x);
+  color: var(--alert-color);
+  background-color: var(--alert-bg);
+  @include border-radius(var(--alert-border-radius));
+
+  &--full {
+    width: 100%;
+  }
+
+  &__header {
+    margin-bottom: 10px;
+  }
+
+  &__footer {
+    margin-top: 10px;
+  }
+
+  &__body {
+    font-family: Roboto, sans-serif;
+  }
+
+  &__link {
+    font-weight: $alert-link-font-weight;
+    color: var(--alert-link-color);
+  }
+
+  &--dismissible {
+    padding-right: $alert-dismissible-padding-r;
+  }
+}
+
+.alert-container {
+  margin-bottom: 20px;
+
+  > :not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.btn-close {
+  --button-close-size: 12px;
+  --button-close-size: 12px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: $alert-padding-y * 0.75 $alert-padding-x * 0.75;
+}
+
+@each $state in map-keys($theme-colors) {
+  .alert--#{$state} {
+    --alert-bg: var(--#{$state});
+
+    @if index(('warning', 'white', 'light'), $state) {
+      --alert-color: var(--black);
+      --alert-link-color: var(--black);
+    } @else {
+      --alert-color: var(--white);
+      --alert-link-color: var(--white);
+    }
+  }
+}

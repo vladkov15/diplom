@@ -1,0 +1,20 @@
+.ControlsBar {
+  margin-top: 5px;
+  padding: 10px 0;
+
+  &__Controls {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+
+    &__LeftSide {
+      display: flex;
+      align-items: center;
+    }
+
+    &__RightSide {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

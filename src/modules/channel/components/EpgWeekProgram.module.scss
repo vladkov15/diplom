@@ -1,0 +1,17 @@
+.EpgWeekProgram {
+  &__ToggleButton {
+    color: #929090;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &__Active {
+      color: #fff;
+    }
+  }
+
+  &__Body {
+    height: 70vh;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+}

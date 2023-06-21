@@ -1,0 +1,42 @@
+.PayCard {
+  display: flex;
+  flex-direction: column;
+
+  &__Title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  &__CardInfo {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    margin-bottom: 15px;
+  }
+
+  &__Brand {
+    margin-right: 5px;
+    text-transform: capitalize;
+  }
+
+  &__Number {
+    margin-right: 5px;
+  }
+}
+
+.PayCardInfo {
+  display: flex;
+  align-items: center;
+  margin-left: -10px;
+  margin-bottom: 15px;
+
+  &__Brand {
+    margin-right: 5px;
+    text-transform: capitalize;
+  }
+
+  &__Number {
+    margin-right: 5px;
+  }
+}

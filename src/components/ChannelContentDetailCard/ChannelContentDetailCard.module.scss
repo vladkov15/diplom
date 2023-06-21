@@ -1,0 +1,68 @@
+.ChannelContentDetailCard {
+  &__Header {
+    margin-top: 36px;
+    margin-bottom: 30px;
+  }
+
+  &__Body {
+    display: grid;
+    grid-template-columns: auto minmax(auto, 390px);
+    grid-template-rows: 450px auto;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__PlayerWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__EpgProgramControlsWrapper {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+  }
+}
+
+.ChannelContentDetailSkeleton {
+  &__Body {
+    display: grid;
+    grid-template-columns: auto minmax(auto, 390px);
+    grid-template-rows: 450px auto;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__PlayerWrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+  }
+
+  &__EpgFullDayProgramWrapper {
+    background-color: var(--secondary);
+    border-radius: 10px;
+  }
+
+  &__EpgDescriptionWrapper {
+    height: 50px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+  }
+  &__EpgProgramControlsWrapper {
+    height: 50px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+  }
+
+  &__ParentControl {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

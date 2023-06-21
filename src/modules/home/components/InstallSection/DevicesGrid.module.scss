@@ -1,0 +1,49 @@
+.DevicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  &__ColumnTitle {
+    .DevicesGrid__Title {
+      color: var(--accent);
+    }
+  }
+
+  &__Header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: var(--secondary);
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  &__ImageContainer {
+    margin-bottom: 15px;
+  }
+
+  &__Title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &__Description {
+    p {
+      line-height: 1.4;
+      margin-top: 0;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: var(--accent);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

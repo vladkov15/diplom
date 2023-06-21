@@ -1,0 +1,85 @@
+.Breadcrumbs {
+  overflow: hidden;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.BreadcrumbsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+
+  li {
+    position: relative;
+    padding-right: 40px;
+
+    a {
+      transition: 0.2s color linear;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+
+    &::after {
+      content: url(/assets/img/breadcrumbs_arrow.svg);
+      position: absolute;
+      top: 0;
+      right: 8px;
+    }
+
+    &:last-of-type {
+      &::after {
+        display: none;
+      }
+
+      a {
+        pointer-events: none;
+        cursor: default;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
+
+.Breadcrumb li:first-child a {
+  padding-left: 20px;
+  pointer-events: visible !important;
+  cursor: pointer !important;
+}
+.Breadcrumb li:nth-child(2) a {
+  background: rgb(224, 233, 233);
+}
+.Breadcrumb li:nth-child(2) a:after {
+  border-left-color: rgb(224, 233, 233);
+}
+.Breadcrumb li:nth-child(3) a {
+  background: rgb(224, 233, 233);
+}
+.Breadcrumb li:nth-child(3) a:after {
+  border-left-color: rgb(224, 233, 233);
+}
+.Breadcrumb li:nth-child(4) a {
+  background: rgb(224, 233, 233);
+}
+.Breadcrumb li:nth-child(4) a:after {
+  border-left-color: rgb(224, 233, 233);
+}
+.Breadcrumb li:nth-child(5) a {
+  background: rgb(224, 233, 233);
+}
+.Breadcrumb li:nth-child(5) a:after {
+  border-left-color: rgb(224, 233, 233);
+}
+.Breadcrumb li:last-child a::after {
+  border: 0;
+}
+
+.Breadcrumb li a:hover {
+  background: rgb(194, 226, 221);
+}
+.Breadcrumb li a:hover:after {
+  border-left-color: rgb(194, 226, 221) !important;
+}

@@ -1,0 +1,25 @@
+.Legend {
+  width: 100%;
+  margin-top: 20px;
+
+  &__Item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+  }
+
+  &__Label {
+    letter-spacing: 1px;
+  }
+
+  &__Mark {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    border: 1px solid white;
+  }
+}

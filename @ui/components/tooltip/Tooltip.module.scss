@@ -1,0 +1,113 @@
+@import './variables';
+
+.tooltip {
+  --tooltip-zindex: #{$zindex-tooltip};
+  --tooltip-max-width: #{$tooltip-max-width};
+  --tooltip-padding-x: #{$tooltip-padding-x};
+  --tooltip-padding-y: #{$tooltip-padding-y};
+  --tooltip-margin: #{$tooltip-margin};
+  --tooltip-color: #{$tooltip-color};
+  --tooltip-bg: #{$tooltip-bg};
+  --tooltip-border-radius: #{$tooltip-border-radius};
+  --tooltip-opacity: #{$tooltip-opacity};
+  --tooltip-arrow-width: #{$tooltip-arrow-width};
+  --tooltip-arrow-height: #{$tooltip-arrow-height};
+
+  z-index: var(--tooltip-zindex);
+  display: block;
+  padding: var(--tooltip-arrow-height);
+  margin: var(--tooltip-margin);
+
+  word-wrap: break-word;
+  opacity: 0;
+
+  &.show {
+    opacity: var(--tooltip-opacity);
+  }
+}
+
+.tooltip-arrow {
+  display: block;
+  width: var(--tooltip-arrow-width);
+  height: var(--tooltip-arrow-height);
+
+  &::before {
+    position: absolute;
+    content: '';
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+
+.tooltip-top .tooltip-arrow {
+  bottom: 0;
+
+  &::before {
+    top: -1px;
+    border-width: var(--tooltip-arrow-height) calc(var(--tooltip-arrow-width) * 0.5) 0;
+    border-top-color: var(--tooltip-bg);
+  }
+}
+
+.tooltip-end .tooltip-arrow {
+  left: 0;
+  width: var(--tooltip-arrow-height);
+  height: var(--tooltip-arrow-width);
+
+  &::before {
+    right: -1px;
+    border-width: calc(var(--tooltip-arrow-width) * 0.5) var(--tooltip-arrow-height)
+      calc(var(--tooltip-arrow-width) * 0.5) 0;
+    border-right-color: var(--tooltip-bg);
+  }
+}
+
+.tooltip-bottom .tooltip-arrow {
+  top: 0;
+
+  &::before {
+    bottom: -1px;
+    border-width: 0 calc(var(--tooltip-arrow-width) * 0.5) var(--tooltip-arrow-height);
+    border-bottom-color: var(--tooltip-bg);
+  }
+}
+
+.tooltip-start .tooltip-arrow {
+  right: 0;
+  width: var(--tooltip-arrow-height);
+  height: var(--tooltip-arrow-width);
+
+  &::before {
+    left: -1px;
+    border-width: calc(var(--tooltip-arrow-width) * 0.5) 0 calc(var(--tooltip-arrow-width) * 0.5)
+      var(--tooltip-arrow-height);
+    border-left-color: var(--tooltip-bg);
+  }
+}
+
+.tooltip-auto {
+  &[data-popper-placement^='top'] {
+    @extend .tooltip-top;
+  }
+
+  &[data-popper-placement^='right'] {
+    @extend .tooltip-end;
+  }
+
+  &[data-popper-placement^='bottom'] {
+    @extend .tooltip-bottom;
+  }
+
+  &[data-popper-placement^='left'] {
+    @extend .tooltip-start;
+  }
+}
+
+.tooltip-inner {
+  max-width: var(--tooltip-max-width);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  color: var(--tooltip-color);
+  text-align: center;
+  background-color: var(--tooltip-bg);
+  @include border-radius(var(--tooltip-border-radius));
+}

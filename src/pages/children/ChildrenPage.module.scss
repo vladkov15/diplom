@@ -1,0 +1,28 @@
+.ChildrenPage {
+  &__Description {
+    margin-bottom: 60px;
+  }
+
+  &__Title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    color: #ffffff;
+  }
+
+  &__Description {
+    font-size: 15px;
+    line-height: 140%;
+    color: #ffffff;
+  }
+
+  &__ChannelSlider {
+    margin-bottom: 70px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

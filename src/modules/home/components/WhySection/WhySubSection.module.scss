@@ -1,0 +1,31 @@
+.WhySubSection {
+  display: flex;
+  align-items: center;
+  margin: 0 -30px;
+
+  &__ImageContainer {
+    position: relative;
+    width: 50%;
+    padding: 0 30px;
+  }
+
+  &__Image {
+    position: relative !important;
+    object-fit: contain;
+  }
+
+  &__Body {
+    width: 50%;
+    padding: 0 30px;
+  }
+
+  &__Title {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 35px;
+  }
+
+  &__Description {
+    margin-bottom: 35px;
+  }
+}

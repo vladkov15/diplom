@@ -1,0 +1,76 @@
+// scss-docs-start button-variant-mixin
+@mixin button-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+  $hover-background:
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $button-hover-bg-shade-amount),
+      tint-color($background, $button-hover-bg-tint-amount)
+    ),
+  $hover-border:
+    if(
+      $color == $color-contrast-light,
+      shade-color($border, $button-hover-border-shade-amount),
+      tint-color($border, $button-hover-border-tint-amount)
+    ),
+  $hover-color: color-contrast($hover-background),
+  $active-background:
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $button-active-bg-shade-amount),
+      tint-color($background, $button-active-bg-tint-amount)
+    ),
+  $active-border:
+    if(
+      $color == $color-contrast-light,
+      shade-color($border, $button-active-border-shade-amount),
+      tint-color($border, $button-active-border-tint-amount)
+    ),
+  $active-color: color-contrast($active-background),
+  $disabled-background: gray,
+  $disabled-border: $border,
+  $disabled-color: color-contrast($disabled-background)
+) {
+  --button-color: #{$color};
+  --button-bg: #{$background};
+  --button-border-color: #{$border};
+  --button-hover-color: #{$hover-color};
+  --button-hover-bg: #{$hover-background};
+  --button-hover-border-color: #{$hover-border};
+  --button-focus-shadow-rgb: #{to-rgb(mix($color, $border, 15%))};
+  --button-active-color: #{$active-color};
+  --button-active-bg: #{$active-background};
+  --button-active-border-color: #{$active-border};
+  --button-active-shadow: #{$button-active-box-shadow};
+  --button-disabled-color: #{$white};
+  --button-disabled-bg: #{$disabled-background};
+  --button-disabled-border-color: #{$disabled-border};
+}
+// scss-docs-end button-variant-mixin
+
+// scss-docs-start button-outline-variant-mixin
+@mixin button-outline-variant(
+  $color,
+  $color-hover: color-contrast($color),
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: color-contrast($active-background)
+) {
+  --button-color: #{$color};
+  --button-border-color: #{$color};
+  --button-hover-color: #{$color-hover};
+  --button-hover-bg: #{$active-background};
+  --button-hover-border-color: #{$active-border};
+  --button-focus-shadow-rgb: #{to-rgb($color)};
+  --button-active-color: #{$active-color};
+  --button-active-bg: #{$active-background};
+  --button-active-border-color: #{$active-border};
+  --button-active-shadow: #{$button-active-box-shadow};
+  --button-disabled-color: #{$color};
+  --button-disabled-bg: transparent;
+  --button-disabled-border-color: #{$color};
+  --gradient: none;
+}
+// scss-docs-end button-outline-variant-mixin

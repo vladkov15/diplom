@@ -1,0 +1,25 @@
+.NeedPackets {
+  background-color: var(--secondary);
+  border-radius: var(--border-radius);
+  padding: 30px;
+
+  &__Title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  &__Description {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1rem;
+  }
+
+  &__Action {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+}

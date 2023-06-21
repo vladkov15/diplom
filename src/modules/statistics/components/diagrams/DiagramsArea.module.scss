@@ -1,0 +1,8 @@
+.DiagramAreaContainer {
+  //max-width: 840px;
+
+  &__DiagramsContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,12 @@
+.ProgressBar {
+  margin: 0 10px;
+  margin-bottom: 5px;
+
+  &__Time {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: -3px;
+  }
+}

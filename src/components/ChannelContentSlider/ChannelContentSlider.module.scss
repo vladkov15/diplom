@@ -1,0 +1,25 @@
+.ChannelContentSlider {
+  &__Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__Title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 44px;
+    margin: 0;
+  }
+
+  &__Button {
+    width: 200px;
+    height: 45px;
+    margin: 30px 0 0 auto;
+  }
+
+  &__Header {
+    display: flex;
+  }
+}

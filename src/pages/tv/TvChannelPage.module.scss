@@ -1,0 +1,23 @@
+.TvChannelPage {
+  &__Underside {
+    margin-top: 100px;
+  }
+
+  &__ChannelContentSlider {
+    margin-bottom: 70px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__ParentControl {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+}

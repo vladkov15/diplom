@@ -1,0 +1,197 @@
+@import './variables';
+
+.button {
+  // scss-docs-start button-css-vars
+  --button-height: #{$button-height};
+  --button-padding-x: #{$button-padding-x};
+  --button-padding-y: #{$button-padding-y};
+  --button-font-family: #{$button-font-family};
+  --button-font-weight: #{$button-font-weight};
+  --button-line-height: #{$button-line-height};
+  --button-color: #{$white};
+  --button-bg: transparent;
+  --button-border-width: #{$button-border-width};
+  --button-border-color: transparent;
+  --button-border-radius: #{$button-border-radius};
+  --button-hover-border-color: transparent;
+  --button-box-shadow: #{$button-box-shadow};
+  --button-disabled-opacity: #{$button-disabled-opacity};
+  --button-focus-box-shadow: 0 0 0 #{$button-focus-width} rgba(var(--button-focus-shadow-rgb), 0.5);
+  --button-decoration: none;
+  --button-hover-decoration: none;
+  // scss-docs-end button-css-vars
+
+  position: relative;
+  display: inline-block;
+  min-height: var(--button-height);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  color: var(--button-color);
+  text-align: center;
+  text-decoration: var(--button-decoration);
+  white-space: $button-white-space;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: var(--button-border-width) solid var(--button-border-color);
+  background-color: var(--button-bg);
+  @include border-radius(var(--button-border-radius));
+  @include box-shadow(var(--button-box-shadow));
+  @include transition($button-transition);
+
+  &--full {
+    width: 100%;
+  }
+
+  &--link {
+    --button-height: none;
+    --button-font-weight: #{$font-weight-normal};
+    --button-color: #{$button-link-color};
+    --button-bg: transparent;
+    --button-border-color: transparent;
+    --button-hover-color: #{$button-link-hover-color};
+    --button-hover-border-color: transparent;
+    --button-active-color: #{$button-link-hover-color};
+    --button-active-border-color: transparent;
+    --button-disabled-color: #{$button-link-disabled-color};
+    --button-disabled-border-color: transparent;
+    --button-box-shadow: 0 0 0 #000;
+    --button-focus-shadow-rgb: #{to-rgb(mix(color-contrast($primary), $primary, 15%))};
+    --button-decoration: #{$button-link-decoration};
+    --button-hover-decoration: #{$button-link-hover-decoration};
+
+    &:focus-visible {
+      color: var(--button-color);
+    }
+
+    &:hover {
+      color: var(--button-hover-color);
+    }
+
+    .button--active {
+      --button-color: #{$white};
+    }
+  }
+
+  &--icon {
+    --button-icon-size: #{$button-icon-size};
+    --button-icon-padding-y: #{$button-icon-padding-y};
+    --button-icon-padding-x: #{$button-icon-padding-x};
+    --button-icon-font-size: #{$button-icon-font-size};
+    --button-disabled-color: #{$white};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
+    padding: var(--button-icon-padding-y) var(--button-icon-padding-x);
+    font-size: var(--button-icon-font-size);
+    line-height: 1;
+
+    > span {
+      display: block;
+      line-height: 0;
+    }
+  }
+
+  &--sm {
+    --button-height: #{$button-height-sm};
+    --button-padding-y: #{$button-padding-y-sm};
+    --button-padding-x: #{$button-padding-x-sm};
+    --button-font-size: #{$button-font-size-sm};
+    --button-border-radius: #{$button-border-radius-sm};
+
+    --button-icon-size: #{$button-icon-size-sm};
+    --button-icon-font-size: #{$button-icon-font-size-sm};
+  }
+
+  &:hover {
+    color: var(--button-hover-color);
+    text-decoration: var(--button-hover-decoration);
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border-color);
+  }
+
+  &:focus-visible {
+    color: var(--button-hover-color);
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border-color);
+    outline: 0;
+    box-shadow: var(--button-box-shadow), var(--button-focus-box-shadow);
+  }
+
+  &--active {
+    color: var(--button-active-color);
+    background-color: var(--button-active-bg);
+    border-color: var(--button-active-border-color);
+    @include box-shadow(var(--button-active-shadow));
+
+    &:focus-visible {
+      box-shadow: var(--button-active-shadow), var(--button-focus-box-shadow);
+    }
+  }
+
+  &--disabled {
+    color: var(--button-disabled-color);
+    background-color: var(--button-disabled-bg);
+    border-color: var(--button-disabled-border-color);
+    opacity: var(--button-disabled-opacity);
+    @include box-shadow(none);
+    cursor: not-allowed;
+
+    &:hover {
+      color: var(--button-disabled-color);
+      background-color: var(--button-disabled-bg);
+      border-color: var(--button-hover-disabled-color);
+    }
+  }
+
+  &--loader > span {
+    visibility: hidden;
+  }
+
+  &__loader {
+    position: absolute;
+
+    top: calc(50% - var(--loader-height) / 2);
+    left: calc(50% - var(--loader-width) / 2);
+  }
+}
+
+// scss-docs-start button-variant-loops
+@each $color, $value in $theme-colors {
+  .button--#{$color} {
+    @if $color == 'light' {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: shade-color($value, $button-hover-bg-shade-amount),
+        $hover-border: shade-color($value, $button-hover-border-shade-amount),
+        $active-background: shade-color($value, $button-active-bg-shade-amount),
+        $active-border: shade-color($value, $button-active-border-shade-amount)
+      );
+    } @else if $color == 'dark' {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: tint-color($value, $button-hover-bg-tint-amount),
+        $hover-border: tint-color($value, $button-hover-border-tint-amount),
+        $active-background: tint-color($value, $button-active-bg-tint-amount),
+        $active-border: tint-color($value, $button-active-border-tint-amount)
+      );
+    } @else {
+      @include button-variant($value, $value);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .button--outline--#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+// scss-docs-end button-variant-loops

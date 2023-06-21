@@ -1,0 +1,81 @@
+.QuestionSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+
+  padding: 120px 0;
+
+  &__ImageContainer {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    > span {
+      position: unset !important;
+    }
+  }
+
+  &__Image {
+    position: relative !important;
+    object-fit: contain;
+    width: 100% !important;
+    height: unset !important;
+  }
+}
+
+.SupportBlock {
+  &__Title {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  > small {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__Phones {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px 10px;
+
+    max-width: 380px;
+
+    a {
+      transition: 0.25s color linear;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+
+  &__Install {
+    margin-top: 30px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    p {
+      margin: 0;
+      margin-bottom: 10px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: var(--accent);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

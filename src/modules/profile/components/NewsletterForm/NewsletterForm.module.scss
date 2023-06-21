@@ -1,0 +1,21 @@
+.NewsletterForm {
+  max-width: 580px;
+
+  &__Title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+  &__Body {
+    display: grid;
+    gap: 20px;
+    max-width: 480px;
+  }
+
+  &__SubscribeButton {
+    min-width: 240px;
+  }
+}

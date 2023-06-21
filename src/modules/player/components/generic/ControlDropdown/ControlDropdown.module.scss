@@ -1,0 +1,20 @@
+.Dropdown {
+  position: relative;
+  z-index: 1000;
+
+  &:hover {
+    .Dropdown__Toggle {
+      --button-color: var(--accent);
+      --button-hover-color: var(--accent);
+    }
+  }
+
+  &__Toggle {
+    position: relative;
+    z-index: 1200;
+  }
+
+  &__Body {
+    --dropdown-padding-y: 0;
+  }
+}

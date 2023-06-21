@@ -1,0 +1,43 @@
+.MainSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  > * {
+    z-index: 1;
+  }
+
+  &__Title {
+    font-weight: 500;
+    font-size: 95px;
+    text-align: center;
+    text-shadow: 0px 0px 12px var(--accent);
+    margin: 0;
+    margin-bottom: 50px;
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  &__Description {
+    font-family: Roboto, sans-serif;
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__Video {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    
+    
+    
+  }
+}

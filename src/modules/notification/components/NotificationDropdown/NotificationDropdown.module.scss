@@ -1,0 +1,23 @@
+.NotificationDropdown {
+  &__Content {
+    height: 240px;
+
+    &.Empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.NotificationEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.2;
+
+  [class^='icon-'] {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+}

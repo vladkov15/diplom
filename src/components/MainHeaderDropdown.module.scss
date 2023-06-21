@@ -1,0 +1,51 @@
+.MainHeaderDropdown {
+  position: relative;
+  z-index: 1000;
+
+  &__Header {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-right: 25px;
+    border-bottom: 1px solid rgba(var(--white-rgb), 0.2);
+  }
+
+  &__Trigger {
+    position: relative;
+    z-index: 1100;
+    display: flex;
+    cursor: pointer;
+  }
+
+  &__Body {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    z-index: -1;
+    background-color: var(--secondary) !important;
+    color: var(--white) !important;
+    border-radius: 10px;
+  }
+
+  &__Content {
+    position: relative;
+    z-index: 1000;
+    padding: 15px;
+  }
+
+  &__Full {
+    position: static;
+    width: 100%;
+    z-index: -1;
+
+    .MainHeaderDropdown {
+      &__Header {
+        height: 60px;
+      }
+
+      &__Content {
+        padding: 20px;
+      }
+    }
+  }
+}

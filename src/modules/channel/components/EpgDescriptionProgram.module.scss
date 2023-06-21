@@ -1,0 +1,44 @@
+.EpgDescriptionProgram {
+  height: 50px;
+  overflow: hidden;
+
+  &__Meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &__Title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    display: inline-block;
+    width: 100%;
+    max-width: 720px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+
+  &__StartTime {
+    display: block;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 20px;
+    color: #929090;
+  }
+
+  &__Description {
+    font-family: 'Roboto';
+    font-weight: 400;
+    line-height: $line-height-base;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}

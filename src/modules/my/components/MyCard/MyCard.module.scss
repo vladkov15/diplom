@@ -1,0 +1,19 @@
+.MyCard {
+  position: relative;
+
+  &__Poster {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      object-fit: contain;
+
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+}

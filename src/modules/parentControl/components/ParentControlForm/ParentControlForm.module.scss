@@ -1,0 +1,46 @@
+.ParentControlForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__Title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__Description {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  &__Group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__GroupSubmit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__GroupResetPassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    font-size: 12px;
+
+    button {
+      --button-color: var(--accent);
+      --button-decoration: underline;
+      --button-hover-decoration: none;
+      --button-font-weight: 500;
+    }
+  }
+}

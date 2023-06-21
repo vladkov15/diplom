@@ -1,0 +1,57 @@
+:root {
+  @each $color, $value in $theme-colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $theme-colors-rgb {
+    --#{$color}-rgb: #{$value};
+  }
+
+  --white: #{$white};
+  --black: #{$black};
+
+  --white-rgb: #{to-rgb($white)};
+  --black-rgb: #{to-rgb($black)};
+
+  // Root and body
+  // scss-docs-start root-body-variables
+  @if $font-size-root != null {
+    --root-font-size: #{$font-size-root};
+  }
+  --body-font-family: #{inspect($font-family-base)};
+  --body-font-size: #{$font-size-base};
+  --body-font-weight: #{$font-weight-base};
+  --body-line-height: #{$line-height-base};
+
+  --body-color: #{$body-color};
+  --body-color-rgb: #{to-rgb($body-color)};
+  --body-bg: #{$body-bg};
+  --body-bg-rgb: #{to-rgb($body-bg)};
+  // scss-docs-end root-body-variables
+
+  @each $color, $value in $theme-colors-text {
+    --#{$color}-text: #{$value};
+  }
+
+  --link-color: #{$link-color};
+  --link-color-rgb: #{to-rgb($link-color)};
+  --link-decoration: #{$link-decoration};
+
+  --link-hover-color: #{$link-hover-color};
+  --link-hover-color-rgb: #{to-rgb($link-hover-color)};
+
+  @if $link-hover-decoration != null {
+    --link-hover-decoration: #{$link-hover-decoration};
+  }
+
+  // scss-docs-start root-border-var
+  --border-width: #{$border-width};
+  --border-style: #{$border-style};
+  --border-color: #{$border-color};
+  --border-color-translucent: #{$border-color-translucent};
+
+  --border-radius: #{$border-radius};
+  // scss-docs-end root-border-var
+
+  --box-shadow: #{$box-shadow};
+}

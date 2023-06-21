@@ -1,0 +1,57 @@
+.MyChannelProgressBar {
+  max-width: 100%;
+  height: 195px;
+  background-color: #1b1e34;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+
+  &__InnerContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 75px auto;
+    gap: 30px;
+    z-index: 1;
+    padding: 30px;
+  }
+
+  &__Body {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+      color: #c6e6ee;
+      font-size: 16px;
+    }
+  }
+
+  &__Title {
+    display: flex;
+    align-content: center;
+    margin: 0;
+    margin-bottom: 10px;
+
+    span {
+      font-size: 26px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+  }
+
+  &__MainProgressContainer {
+    width: 100%;
+    height: 190px;
+    background-color: transparent;
+  }
+
+  &__LinearProgressContainer {
+    width: 100%;
+    height: 5px;
+    background-color: #3d4053;
+  }
+}

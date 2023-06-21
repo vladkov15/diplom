@@ -1,0 +1,13 @@
+.SearchForm {
+  display: grid;
+  grid-template-areas: 'a a a a' 'b c d e';
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 20px;
+
+  &__SearchButton {
+    --button-color: var(--black);
+
+    margin-right: -10px;
+  }
+}

@@ -1,0 +1,12 @@
+export enum Countries {
+  RUSSIA = 643,
+  NETHERLANDS = 528,
+  POLAND = 616,
+  BELARUS = 112,
+  ARGENTINA = 32,
+  AUSTRALIA = 36,
+  BELGIUM = 56,
+  BRASIL = 76,
+  FOREIGN = 0,
+  DOMESTIC = 1,
+}

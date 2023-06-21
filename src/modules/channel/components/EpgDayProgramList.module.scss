@@ -1,0 +1,67 @@
+.EpgDayProgramList {
+  font-family: 'Roboto';
+  padding-right: 30px;
+
+  &__Full {
+    .EpgDayProgramLegend {
+      display: grid;
+      grid-template-columns: 40px 80px 1fr 3fr;
+      font-weight: 600;
+      padding-bottom: 10px;
+    }
+
+    .EpgDayProgramItem {
+      grid-template-columns: 40px 80px 1fr 3fr;
+      border-bottom: 1px solid rgba($white, 0.1);
+      margin-bottom: 0;
+      padding: 10px 0;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.EpgDayProgramItem {
+  display: grid;
+  grid-template-columns: 40px 60px auto;
+  align-items: flex-start;
+  font-size: 15px;
+  color: #929090;
+  margin-bottom: 10px;
+  line-height: $line-height-base;
+  transition: 0.15s color linear;
+  pointer-events: none;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__Icon {
+    i {
+      display: block;
+      font-size: 20px;
+    }
+  }
+
+  &__Live,
+  &__Archive {
+    pointer-events: all;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--accent);
+    }
+  }
+
+  &__Active {
+    pointer-events: all;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.WhySection {
+  padding: 120px 0;
+}
+
+.BigChoiceList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+
+  span {
+    display: inline-block;
+    margin: 5px 0;
+    color: var(--accent);
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  li {
+    position: relative;
+    padding: 15px 45px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--accent);
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.DeviceList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--accent);
+
+  li {
+    position: relative;
+    padding: 15px 45px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--accent);
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.AdditionalFeatureList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+
+  li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: calc(50% - 4px);
+
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      box-shadow: 0px 0px 4px var(--accent);
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

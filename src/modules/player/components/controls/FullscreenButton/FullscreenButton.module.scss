@@ -1,0 +1,10 @@
+.FullscreenButton {
+  i {
+    font-size: 28px;
+  }
+
+  &:hover {
+    --button-color: var(--accent);
+    --button-hover-color: var(--accent);
+  }
+}

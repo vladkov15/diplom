@@ -1,0 +1,85 @@
+.PayPacketErip {
+  &__EripNumber {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    &__EripLabel {
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    &__EripNumber {
+      width: 100%;
+      height: 80px;
+      font-size: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    &__SendMessage {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+
+  &__Instructions {
+    margin-top: 20px;
+
+    h4 {
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .PaymentStep {
+      margin-left: 70px;
+      position: relative;
+      margin-bottom: 20px;
+
+      &:before {
+        content: '1';
+        position: absolute;
+        left: -70px;
+        top: 1px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid white;
+      }
+
+      &__Title {
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      &__Description {
+        display: flex;
+        align-items: center;
+        margin: 0;
+
+        [class^='icon-'] {
+          font-size: 20px;
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .PaymentStep:nth-of-type(2) {
+      &:before {
+        content: '2';
+      }
+    }
+  }
+}

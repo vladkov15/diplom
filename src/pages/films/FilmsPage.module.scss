@@ -1,0 +1,27 @@
+.FilmsPage {
+  margin: 35px auto;
+
+  &__FilmGenreSlider {
+    margin-bottom: 70px;
+  }
+
+  &__PromoFilmSlider {
+    margin-bottom: 70px;
+  }
+
+  &__UnfinishedFilmSlider {
+    margin-bottom: 70px;
+  }
+
+  &__FavoritesFilmSlider {
+    margin-bottom: 70px;
+  }
+
+  &__FilmSlider {
+    margin-bottom: 70px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

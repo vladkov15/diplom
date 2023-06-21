@@ -1,0 +1,82 @@
+$range-background-color: rgba(255, 255, 255, 0.5);
+$range-secondary-color: rgba(255, 255, 255, 0.5);
+$range-progress-color: var(--accent);
+$range-tooltip-bgcolor: rgba(16, 16, 16, 0.57);
+
+.Range {
+  --range-background-color: #{$range-background-color};
+  --range-secondary-color: #{$range-secondary-color};
+  --range-progress-color: #{$range-progress-color};
+  --range-tooltip-bgcolor: #{$range-tooltip-bgcolor};
+
+  min-width: 150px;
+
+  font-size: 10px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  input[type='range'] {
+    display: none;
+  }
+
+  .ProgressTooltip {
+    height: 20px;
+    min-width: 50px;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: var(--range-tooltip-bgcolor);
+    position: absolute;
+    display: none;
+    bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .Range {
+    flex-grow: 1;
+    height: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+
+    cursor: pointer;
+
+    &__Layer {
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &__Background {
+      background-color: var(--range-background-color);
+      width: 100%;
+    }
+
+    &__Secondary {
+      background-color: var(--range-secondary-color);
+    }
+
+    &__Progress {
+      background-color: var(--range-progress-color);
+      transition: all ease-in-out 200ms;
+    }
+  }
+
+  .Prepend {
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  .Append {
+    margin-left: 10px;
+    text-align: left;
+  }
+}

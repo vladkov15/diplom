@@ -1,0 +1,8 @@
+export enum PacketTags {
+  GET_PACKETS = 'GET_PACKETS',
+}
+
+export enum PacketNotificationKeys {
+  SEND_ERIP_CODE_TO_PHONE_SUCCESS = 'SEND_ERIP_CODE_TO_PHONE_SUCCESS',
+  SEND_ERIP_CODE_TO_PHONE_ERROR = 'SEND_ERIP_CODE_TO_PHONE_ERROR',
+}

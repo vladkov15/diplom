@@ -1,0 +1,16 @@
+.ContentGrid {
+  color: #fff;
+
+  &__Body {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    color: #fff;
+  }
+
+  &__Footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+}

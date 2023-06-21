@@ -1,0 +1,18 @@
+.SubscribeSection {
+  padding: 120px 0;
+  background-color: var(--secondary);
+
+  &__InnerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__Description {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+  }
+}

@@ -1,0 +1,26 @@
+.scrollable {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+    &:hover {
+      background: var(--accent);
+    }
+  }
+}
