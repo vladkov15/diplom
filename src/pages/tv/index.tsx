@@ -23,7 +23,7 @@ const CHANNEL_CATEGORIES = [
 const TvPage: NextPage = () => {
   const { data: categories } = useGetChannelCategoriesQuery()
 
-  const arr = categories?.filter((item) => item.id)
+  const arr = categories?.filter((item ) => item.id == CHANNEL_CATEGORIES[0] || item.id == CHANNEL_CATEGORIES[1] || item.id == CHANNEL_CATEGORIES[2] || item.id == CHANNEL_CATEGORIES[3]? item.id :"" )
 
   const categoriesForSSR = getChannelCategoriesForSSR(arr || []).map(({ id }) => id)
 
@@ -44,9 +44,9 @@ const TvPage: NextPage = () => {
             <FavoritesChannelSlider />
           </div>
 
-          {CHANNEL_CATEGORIES?.map((category, index) => (
+          {arr?.map((category, index) => (
             <div className={styles.TvPage__ChannelSlider}>
-              <ChannelSlider category={categories![index]} limit={CHANNEL_CATEGORIES_LIMIT} />
+              <ChannelSlider category={category} limit={CHANNEL_CATEGORIES_LIMIT} />
             </div>
           ))}
         </div>
